@@ -1,0 +1,216 @@
+@import url("./fonts.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+:root {
+  --color-secondary-900: rgb(17, 24, 39);
+  --color-secondary-800: rgb(31, 41, 55);
+  --color-secondary-700: rgb(55, 65, 81);
+  --color-secondary-600: rgb(75, 85, 99);
+  --color-secondary-500: rgb(107, 114, 128);
+  --color-secondary-400: rgb(156, 163, 175);
+  --color-secondary-300: rgb(209, 213, 219);
+  --color-secondary-200: rgb(229, 231, 235);
+  --color-secondary-100: rgb(243, 244, 246);
+  --color-secondary-50: rgb(249, 250, 251);
+  --color-secondary-0: rgb(255, 255, 255);
+
+  --color-primary-900: rgb(77, 112, 255);
+  --color-primary-800: rgb(92, 124, 255);
+  --color-primary-700: rgb(92, 124, 255);
+  --color-primary-600: rgb(128, 153, 255);
+  --color-primary-500: rgb(146, 167, 255);
+  --color-primary-400: rgb(164, 182, 255);
+  --color-primary-300: rgb(183, 197, 255);
+  --color-primary-200: rgb(201, 211, 255);
+  --color-primary-100: rgb(219, 226, 255);
+  --color-primary-50: rgb(228, 233, 255);
+
+  --border-radius-tiny: 3px;
+  --border-radius-sm: 5px;
+  --border-radius-md: 7px;
+  --border-radius-lg: 9px;
+
+  --color-success: rgb(0, 192, 115);
+  --color-warning: rgb(255, 153, 0);
+  --color-error: rgb(255, 71, 87);
+  --color-red-700: rgb(185, 28, 28);
+  --color-red-800: rgb(153, 27, 27);
+  --color-red-500: rgb(239, 68, 68);
+  --color-red-300: rgb(252, 165, 165);
+  --color-red-100: rgb(254, 226, 226);
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--color-secondary-100);
+  font-size: 1.6rem;
+}
+
+body {
+  font-family: Vazirmatn;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --color-btn: #009baf;
+  --color-texts: #878787;
+  --color-nav: #f7f8fa;
+  --color-price: #3a3a3a;
+  --color-white: #fff;
+  --color-placeholder: #cacaca;
+  --color-endurance: #ff5252;
+  --color-increase: #acd373;
+  --color-border: #dfdfdf;
+  --color-body: #f7f8fa;
+  --color-border: #ececec;
+  --color-black: rgba(0, 0, 0, 0.1);
+}
+
+/*Btn*/
+.upload {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  /* display: none; */
+}
+
+.upload__btn {
+  cursor: pointer;
+  font-family: "Vazirmatn";
+  font-size: 2rem;
+  color: var(--color-white);
+  background-color: var(--color-btn);
+  border: none;
+  border-radius: 1.5rem;
+  padding: 1rem 7rem;
+}
+
+/*navbar*/
+.transaction-nav {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3rem;
+}
+
+.transaction-nav__title {
+  color: var(--color-texts);
+}
+
+input[type="search"] {
+  background-image: url("/assets/images/Search.png");
+  background-repeat: no-repeat;
+  background-size: 2rem;
+  background-position: center left 1rem;
+  border-radius: 1.5rem;
+  border: 2px solid var(--color-border);
+  width: 30rem;
+  padding: 1rem;
+  outline: none;
+}
+
+input[type="search"]::placeholder {
+  font-family: "Vazirmatn";
+  color: var(--color-placeholder);
+  font-size: 1.5rem;
+}
+
+input[type="search"]:focus {
+  background-image: none;
+  border: 2px solid var(--color-btn);
+}
+
+/*table*/
+.transactions-section {
+  display: none;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  background-color: var(--color-white);
+  width: 55%;
+  margin: 0 auto;
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0rem 0.6rem 0.5rem var(--color-black);
+}
+
+.transactions-section__title {
+  font-size: 1.5rem;
+  margin: 3rem;
+  color: var(--color-texts);
+  align-self: flex-start;
+}
+
+svg {
+  cursor: pointer;
+  width: 1.6rem;
+  vertical-align: middle;
+}
+
+.arrow-up {
+  display: none;
+}
+
+.transactions {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5rem;
+  align-items: center;
+  justify-content: center;
+  border-collapse: collapse;
+}
+
+.transactions-list {
+  background-color: var(--color-nav);
+}
+
+.transactions-list__title:first-child {
+  border-radius: 0 1rem 0 0;
+}
+
+.transactions-list__title:last-child {
+  border-radius: 1rem 0 0 0;
+}
+
+.transactions-list__title {
+  padding: 1rem 3rem;
+}
+
+.transactions__body td {
+  padding: 1rem 2rem;
+  text-wrap: nowrap;
+}
+
+.transactions__body {
+  border-bottom: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
+
+.date,
+.tracing-code,
+.number {
+  color: var(--color-texts);
+}
+
+.price {
+  color: var(--color-price);
+}
+
+.green {
+  color: var(--color-increase);
+}
+
+.red{
+  color: var(--color-endurance);
+}

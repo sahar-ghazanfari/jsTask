@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسک دوره جاوااسکریپت</title>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <!--nav-->
+    <header>
+      <nav class="transaction-nav">
+        <h1 class="transaction-nav__title">لیست تراکنش ها</h1>
+        <!--searchbar-->
+        <input id="search" type="search" placeholder="جستجو تراکنش..." />
+      </nav>
+    </header>
+    <main>
+      <!--upload button-->
+      <div class="upload">
+        <button class="upload__btn" onclick="showTransaction()">
+          بارگزاری تراکنش ها
+        </button>
+      </div>
+      <!--transactions lists-->
+      <section class="transactions-section">
+        <h2 class="transactions-section__title">لیست تراکنش های شما</h2>
+        <!--transactions header-->
+
+        <table class="transactions">
+          <thead>
+            <tr class="transactions-list">
+              <th class="transactions-list__title">ردیف</th>
+              <th class="transactions-list__title">نوع تراکنش</th>
+              <th class="transactions-list__title">
+                مبلغ
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 arrow-down"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 arrow-up"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                  />
+                </svg>
+              </th>
+              <th class="transactions-list__title">شماره پیگیری</th>
+              <th class="transactions-list__title">
+                تاریخ تراکنش
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 arrow-down"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 arrow-up"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                  />
+                </svg>
+              </th>
+            </tr>
+          </thead>
+          <!--transactions body-->
+          <tbody class="transactions-section__body">
+            <!-- <tr class="transactions__body"> -->
+            <!-- <td class="number">10</td>
+                  <td class="type green">افزایش اعتبار</td>
+                  <td class="price">1000000</td>
+                  <td class="tracing-code">123126411</td>
+                  <td class="date">12/08/1399 ساعت 12:33</td> -->
+            <!-- </tr> -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+      integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/src/js/index.js"></script>
+  </body>
+</html>
