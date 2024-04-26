@@ -22,10 +22,9 @@ function renderTransactions(transactions) {
     resault += `
     <tr class="transactions__body">
         <td class="number">${transaction.id}</td>
-        <td class="type">${
-          transaction.type
-          // changeTextColor(transaction.type)
-        }</td>
+        <td class="type ${
+          transaction.type === "افزایش اعتبار" ? "green" : "red"
+        }">${transaction.type}</td>
         <td class="price">${Number(transaction.price).toLocaleString()}</td>
         <td class="tracing-code">${transaction.refId}</td>
         <td class="date">${
@@ -61,13 +60,3 @@ searches.addEventListener("input", async (e) => {
     .catch((err) => console.log(err));
   renderTransactions(data);
 });
-
-//color change
-// const colors = document.querySelector(".type");
-// function changeTextColor(text) {
-//   if (text === "افزایش اعتبار") {
-//     colors.style.color = "green";
-//   } else {
-//     colors.style.color = "red";
-//   }
-// }
