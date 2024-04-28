@@ -2,17 +2,6 @@
 const searches = document.querySelector("#search");
 let allTransaction = [];
 
-document.addEventListener("DOMContentLoaded", () => {
-  axios
-    .get("http://localhost:3000/transactions")
-    .then((res) => {
-      allTransaction = res.data;
-      console.log(res.data);
-      renderTransactions(res.data);
-    })
-    .catch((err) => console.log(err));
-});
-
 //render
 
 const transactionRoot = document.querySelector(".transactions-section__body");
@@ -37,9 +26,18 @@ function renderTransactions(transactions) {
 
 //show section transaction list
 const btns = document.querySelector(".upload__btn");
+
 function showTransaction() {
   document.querySelector(".transactions-section").style.display = "block";
+  document.querySelector("#search").style.opacity = "1";
   btns.style.display = "none";
+  axios
+    .get("http://localhost:3000/transactions")
+    .then((res) => {
+      allTransaction = res.data;
+      renderTransactions(res.data);
+    })
+    .catch((err) => console.log(err));
 }
 
 //date
@@ -60,3 +58,60 @@ searches.addEventListener("input", async (e) => {
     .catch((err) => console.log(err));
   renderTransactions(data);
 });
+
+//sort
+const buttonArrowDown = document.querySelector(".arrow-down");
+const buttonArrowUp = document.querySelector(".arrow-up");
+
+function sortByOldestPrice() {
+  axios
+    .get("http://localhost:3000/transactions?_sort=price&_order=desc")
+    .then((res) => {
+      allTransaction = res.data;
+      console.log(res.data);
+      renderTransactions(res.data);
+    })
+    .catch((err) => console.log(err));
+  document.querySelector(".arrow-down").style.display = "none";
+  document.querySelector(".arrow-up").style.display = "block";
+}
+
+function sortByLatestPrice() {
+  axios
+    .get("http://localhost:3000/transactions?_sort=price&_order=as")
+    .then((res) => {
+      allTransaction = res.data;
+      console.log(res.data);
+      renderTransactions(res.data);
+    })
+    .catch((err) => console.log(err));
+  document.querySelector(".arrow-down").style.display = "block";
+  document.querySelector(".arrow-up").style.display = "none";
+}
+
+function sortByOldestDate() {
+  axios
+    .get("http://localhost:3000/transactions?_sort=date&_order=desc")
+    .then((res) => {
+      allTransaction = res.data;
+      console.log(res.data);
+      renderTransactions(res.data);
+    })
+    .catch((err) => console.log(err));
+  document.querySelector(".arrow-down__Date").style.display = "none";
+  document.querySelector(".arrow-up__Date").style.display = "block";
+}
+
+function sortByLatestDate() {
+  axios
+    .get("http://localhost:3000/transactions?_sort=date&_order=as")
+    .then((res) => {
+      allTransaction = res.data;
+      console.log(res.data);
+      renderTransactions(res.data);
+    })
+    .catch((err) => console.log(err));
+  document.querySelector(".arrow-down__Date").style.display = "block";
+  document.querySelector(".arrow-up__Date").style.display = "none";
+}
+
